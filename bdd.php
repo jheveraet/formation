@@ -3,7 +3,6 @@
 function getPdoObject() {
 	try {
 		$pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'annuaire2', 'annuaire');
-		$resultats = $pdo->query('SELECT * from annuaire');
 	} catch(PDOException $e) {
 		print "Erreur !: " . $e->getMessage() . "<br/>";
 		die();

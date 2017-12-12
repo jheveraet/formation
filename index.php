@@ -20,7 +20,7 @@ include("bdd.php");
 			</thead>
 			<tbody>
 				<?php
-							//parcourrir les resultats
+				//parcourrir les resultats
 				foreach($resultats as $row) {
 					?>
 					<tr>
