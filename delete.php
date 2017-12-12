@@ -1,22 +1,10 @@
 <?php
+include("bdd.php");
 // récupere l'ID dans l'URL
 $id2delete = $_GET['id']; // /!\ NTU Never Trust User
 		//supprimer effectivement l'utilisateur qui a cet id
-
-	try {
-          //on essaye de se créer un objet de la class PDO pour pouvoir faire des requetes sur la bdd
-          //si new PDO renvoi une erreur (ex: la bdd est hors ligne) selon emettra un objet de type
-          // PDOexception qui sera capturer par le catch. (sinon on rentrera jamais dans le catch)
-		  $pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'annuaire2', 'annuaire');
-
-		  //on va utiliser l'objet précedement créer pour executer une requete et rappatrier des résultats.
-		  $resultats = $pdo->query("DELETE from annuaire where id=$id2delete");
-		  //libérer la connexion
-		  $pdo = null;
-	} catch(PDOException $e) {
-		  print "Erreur !: " . $e->getMessage() . "<br/>";
-		  die();
-	}
+deleteContact($id2delete);
+	
 	
 	//afficher message comme quoi c'est tout bon
 ?>
@@ -47,7 +35,7 @@ $id2delete = $_GET['id']; // /!\ NTU Never Trust User
       	<div class="alert"> utilisateur supprimer. Tout c'est bien passé </div>
        </div>
         <footer id="footer" role="contentinfo" class="pam">
-         <a href="entite.php"><img src="button/btns_back.jpg" alt="back" height="42" width="42">Back Home</a>
+         <a href="index.php"><img src="button/btns_back.jpg" alt="back" height="42" width="42">Back Home</a>
        </footer>
        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
