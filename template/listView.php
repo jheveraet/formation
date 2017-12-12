@@ -1,11 +1,3 @@
-<?php
-include("bdd.php");
-
- $resultats = getAllContacts(); 
-
-
-?>
-
 <?php include('header.php'); ?>
 
 <div class="row">
@@ -27,9 +19,9 @@ include("bdd.php");
 						<td><?=$row['nom']?></td>
 						<td><?=$row['prenom']?>( <?=$row['age']?> ans)</td>
 						<td>
-							<a href="detail.php?id=<?=$row['id']?>">Voir</a> / 
-							<a href="delete.php?id=<?=$row['id']?>">supprimer</a> /
-							<a href="update.php?id=<?=$row['id']?>">Mise à jour</a>
+							<a href="detailController.php?id=<?=$row['id']?>">Voir</a> / 
+							<a href="deleteController.php?id=<?=$row['id']?>">supprimer</a> /
+							<a href="updateController.php?id=<?=$row['id']?>">Mise à jour</a>
 						</td>
 					</tr>
 					<?php
@@ -39,4 +31,10 @@ include("bdd.php");
 			</tbody>
 		</table>
 	</div>
+	<!-- ajouter une contact dans la bdd -->
+	<div class="col-md-12">
+	<a href="createController.php">Ajouter utilisateur</a>
+
+	</div>	
+
 </div>

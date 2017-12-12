@@ -13,7 +13,7 @@
 	<div class='container'>
 		<div class="row">
 			<div class="col-md-3">
-				<a href="index.php"><img src="img/logo.gif" class="logo"></a>
+				<a href="listController.php"><img src="template/img/logo.gif" class="logo"></a>
 			</div>
 			<div class="col-md-9">
 				<h1>Annuaire de contact	</h1>		
