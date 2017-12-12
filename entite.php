@@ -1,3 +1,23 @@
+<?php
+/* RAPPATRIEMENT DE DONNEES */
+			//se connecter à la bdd
+			//besoin des informations de connexions
+			//besoin d'un objet PDO.
+			//construire un objet pdo
+try {
+	$pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'annuaire2', 'annuaire');
+
+			//utiliser l'objet pdo pour executer une requete
+	$resultats = $pdo->query('SELECT * from annuaire');
+	$pdo = null;
+} catch(PDOException $e) {
+	print "Erreur !: " . $e->getMessage() . "<br/>";
+	die();
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,34 +36,9 @@
 				<img src="img/logo.gif" class="logo">
 			</div>
 			<div class="col-md-9">
-				<h1>Annuaire de contact	</h1>			
+				<h1>Annuaire de contact	</h1>		
 			</div>
 		</div>
-
-		<?php
-
-		//se connecter à la bdd
-			//besoin des informations de connexions
-			//besoin d'un objet PDO.
-			//construire un objet pdo
-		try {
-			$pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'annuaire2', 'annuaire');
-			
-			//utiliser l'objet pdo pour executer une requete
-			$resultats = $pdo->query('SELECT * from annuaire');
-			
-			$pdo = null;
-		} catch(PDOException $e) {
-			print "Erreur !: " . $e->getMessage() . "<br/>";
-			die();
-		}
-	    //liberer l'objet (cad couper la connexion)
-
-		//faire notre requete
-		//afficher les resultats
-		//se deconnecter
-
-		?>
 		<div class="row">
 			<div class="col-md-12">	
 				<table class="table table-striped table-bordered">
@@ -61,8 +56,12 @@
 								?>
 								<tr>
 									<td><?=$row['nom']?></td>
-									<td><?=$row['prenom']?></td>
-									<td><?php print_r($row); ?></td>
+									<td><?=$row['prenom']?>( <?=$row['age']?> ans)</td>
+									<td>
+										<a href="DetailContact.php?id=<?=$row['id']?>">Voir</a> / 
+										<a href="delete2.php?id=<?=$row['id']?>">supprimer</a> /
+										<a href="update.php?id=<?=$row['id']?>">Mise à jour</a>
+									</td>
 								</tr>
 								<?php
 							}
