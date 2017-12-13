@@ -1,0 +1,21 @@
+
+#### INSTALLER LA LIBRAIRIE POUR POUVOIR CREER DES PDF --> COMPOSER ###
+//0 choisir et installer la librairie de php voulu
+	//1. choisir la lib sur packagist
+	//2. composer require pdfmachin/pdfmachin	
+
+
+### ON A AJOUTE UNE ACTION AU SITE --> DONC UN CONTROLLER ####
+//1 créer un controller (pdfController.php)
+//2 dans ce controller rapatrier les données du model dont on a besoin
+	// require autoload.php
+	// require de model.php
+	// $resultats = get_all_contacts();
+
+### ON UTILISER LA LIBRAIRIE POUR CREER UN PDF ####
+//3 on va utiliser la librairie php précedement installer
+	//lire la doc de la lib pdf choisi
+	//ajouter le bon "use" pour pouvoir utiliser la lib
+	//creer un objet pdfcreator ... (voir doc)
+	//via l'objet creer ajouter des pages au pdf pour chaque ligne de la variable tableaux resultats
+	//finaliser le pdf et l'envoyer. 
