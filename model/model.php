@@ -14,7 +14,9 @@ function getPdoObject() {
 }
 function getAllContacts() { 
 	$pdo =getPdoObject();
-	$resultats = $pdo->query('SELECT * from annuaire');
+	$sth = $pdo->prepare("SELECT id,prenom,nom,age from annuaire");
+	$sth->execute();
+	$resultats = $sth->fetchAll(PDO::FETCH_ASSOC);
 	$pdo = null;
 	return $resultats;
 }
