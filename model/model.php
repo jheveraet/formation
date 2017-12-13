@@ -10,7 +10,7 @@ function getPdoObject() {
 		die();
 	}
 	
-		return $pdo;
+	return $pdo;
 }
 function getAllContacts() { 
 	$pdo =getPdoObject();
@@ -55,5 +55,22 @@ function createContact($prenom, $nom, $age) {
 	$pdo = null;
 	return $lastid;
 	
+}
+
+function getAllCompetences() {
+	$pdo =getPdoObject();
+	$sth = $pdo->prepare("SELECT id,nom from competence");
+	$sth->execute();
+	$resultats = $sth->fetchAll(PDO::FETCH_ASSOC);
+	$pdo = null;
+	return $resultats;
+}
+
+function createCompetence($nom) {
+	$pdo = getPdoObject();
+	$resultats = $pdo->query("INSERT INTO competence (nom) VALUES ('$nom')");
+	$lastid = $pdo->lastInsertId(); 
+	$pdo = null;
+	return $lastid;
 }
 ?>

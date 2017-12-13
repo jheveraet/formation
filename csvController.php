@@ -1,9 +1,9 @@
 <?php
+	
+	use League\Csv\Writer;
 
 	include('vendor/autoload.php');
 	include("model/model.php");
-
-	use League\Csv\Writer;
 
 	$resultats = getAllContacts(); 
 	$csv = Writer::createFromFileObject(new SplTempFileObject());
