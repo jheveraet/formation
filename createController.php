@@ -12,4 +12,5 @@
   }
 
   include("template/contactformView.php");
+  
 ?>
