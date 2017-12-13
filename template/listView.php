@@ -33,8 +33,8 @@
 	</div>
 	<!-- ajouter une contact dans la bdd -->
 	<div class="col-md-12">
-	<a href="createController.php">Ajouter utilisateur</a>
-
+		<a class="btn btn-primary" href="createController.php" role="button">Ajouter utilisateur</a>
+		
 	</div>	
 
 </div>
