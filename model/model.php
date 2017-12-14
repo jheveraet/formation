@@ -1,10 +1,9 @@
 <?php 
-
 include("Contact.php");
 
 function getPdoObject() {
 	try {
-		$pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'annuaire', 'annuaire');
+		$pdo = new PDO('mysql:host=localhost;dbname=annuaire', 'root', '');
 	} catch(PDOException $e) {
 		print "Erreur !: " . $e->getMessage() . "<br/>";
 		die();

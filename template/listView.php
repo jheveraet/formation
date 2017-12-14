@@ -5,10 +5,10 @@
 		<table id="listecontact" class="table table-striped table-bordered">
 			<thead>
 				<tr>
-					<th>prenom</th>
-					<th>nom</th>
-					<th>compétence</th>
-					<th>actions</th>
+					<th>Prénom</th>
+					<th>Nom</th>
+					<th>Compétence</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,9 +38,9 @@
 	</div>
 	<!-- ajouter une contact dans la bdd -->
 	<div class="col-md-12">
-		<a class="btn btn-primary" href="csvController.php" role="button">Export CSV</a>
+		<a class="btn btn-primary" href="index.php/csv" role="button">Export CSV</a>
 		<a class="btn btn-primary" href="createController.php" role="button">Ajouter utilisateur</a>
-		<a class="btn btn-primary" href="pdfController.php" role="button">Créer un Pdf</a>
+		<a class="btn btn-primary" href="index.php/pdf" role="button">Créer un Pdf</a>
 	</div>	
 
 </div>
